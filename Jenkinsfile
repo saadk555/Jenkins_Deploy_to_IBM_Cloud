@@ -10,6 +10,7 @@ pipeline {
                 sh 'curl -fsSL https://clis.cloud.ibm.com/install/linux | sh'
                 sh 'ibmcloud --version'
                 sh 'ibmcloud config --check-version=false'
+                sh 'ibmcloud plugin install cloud-object-storage'
             }
         }
 
