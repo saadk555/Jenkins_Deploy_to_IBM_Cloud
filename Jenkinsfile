@@ -17,6 +17,7 @@ pipeline {
         stage('Deploying Script') {
             steps {
                 sh 'ibmcloud login --apikey "${KEY}" --no-region'
+                sh 'ibmcloud target -r jp-tok'
                 sh 'ibmcloud cos object-put --bucket s2k-guestbook --key index.html --body index.html'  
             }
         }
