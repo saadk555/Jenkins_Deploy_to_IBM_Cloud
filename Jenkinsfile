@@ -6,6 +6,8 @@ pipeline {
             steps {
                 sh 'echo "successful"'
                 sh 'echo $HELLO'
+                sh 'echo $H'
+                
             }
         }
     }
