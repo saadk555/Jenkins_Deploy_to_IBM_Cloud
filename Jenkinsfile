@@ -5,6 +5,7 @@ pipeline {
         stage('Run Script') {
             steps {
                 sh 'echo "successful"'
+                sh 'echo $HELLO'
             }
         }
     }
