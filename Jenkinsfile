@@ -7,11 +7,13 @@ pipeline {
     stages {
         stage('IBM Script') {
             steps {
+                script {
                 try {
                 build job: 'system-check-flow'
-            } catch (err) {
+                } catch (err) {
                 echo err.getMessage()
             }
+        }
                 sh 'curl -fsSL https://clis.cloud.ibm.com/install/linux | sh'
                 sh 'ibmcloud --version'
                 sh 'ibmcloud config --check-version=false'
